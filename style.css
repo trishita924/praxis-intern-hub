@@ -95,7 +95,7 @@ h1 em,h2 em{font-family:Georgia,serif;font-weight:400;color:var(--yellow);letter
 .login-note{text-align:center;color:rgba(255,255,255,.36);font-size:8px;margin-top:11px}
 
 .finder{
-  background:#eeece4;color:#171815;padding:72px 8% 62px;
+  background: #0a0a09;;color: #fff;;padding:72px 8% 62px;
 }
 .finder-top,.opportunities-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
 .finder h2,.opportunities h2{
