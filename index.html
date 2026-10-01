@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PRAXIS — The Intern Hub. Discover internships by country, location and domain." />
+  <title>PRAXIS — The Intern Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <nav class="navbar">
+      <a class="brand" href="#">
+        <span class="brand-mark">P</span>
+        <span class="brand-name">PRAXIS</span>
+        <span class="brand-sub">The Intern Hub</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#discover">Discover</a>
+        <a href="#domains">Domains</a>
+        <a href="#about">About</a>
+      </div>
+
+      <button class="nav-login" id="navLogin">Log in</button>
+    </nav>
+
+    <main>
+      <section class="hero" id="discover">
+        <div class="hero-photo"></div>
+        <div class="hero-vignette"></div>
+        <div class="grain"></div>
+
+        <div class="hero-content">
+          <div class="eyebrow"><span></span> INTERNSHIPS, WITHOUT THE NOISE</div>
+          <h1>PRAXIS<br><em>The Intern Hub.</em></h1>
+          <p class="hero-copy">
+            Find internships that fit your ambition — across countries,
+            locations and domains, all in one place.
+          </p>
+
+          <div class="login-card">
+            <div class="login-heading">
+              <strong>Start exploring</strong>
+              <span>Sign in to save internships</span>
+            </div>
+
+            <div class="login-actions">
+              <button class="social-btn google" data-login="Google">
+                <span class="social-icon">G</span>
+                Continue with Google
+              </button>
+              <button class="social-btn apple" data-login="Apple">
+                <span class="social-icon apple-symbol">●</span>
+                Continue with Apple
+              </button>
+              <button class="social-btn email" data-login="Email">
+                <span class="social-icon">✉</span>
+                Continue with Email
+              </button>
+            </div>
+
+            <div class="login-note">No spam. Your profile stays yours.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="finder" id="domains">
+        <div class="finder-top">
+          <div>
+            <div class="section-kicker">FIND YOUR FIT</div>
+            <h2>What are you looking for?</h2>
+          </div>
+          <div class="result-count" id="resultCount">12,480+ opportunities</div>
+        </div>
+
+        <div class="filter-grid">
+          <label class="filter-field">
+            <span>Country</span>
+            <select id="country">
+              <option value="all">Select country</option>
+            </select>
+          </label>
+
+          <label class="filter-field">
+            <span>Location</span>
+            <select id="location">
+              <option value="all">Any location</option>
+              <option>Remote</option>
+              <option>Work from home</option>
+              <option>On-site</option>
+              <option>Hybrid</option>
+            </select>
+          </label>
+
+          <label class="filter-field">
+            <span>Domain</span>
+            <select id="domain">
+              <option value="all">Select domain</option>
+              <option>UI/UX Designer</option>
+              <option>AI / ML Engineer</option>
+              <option>Software Engineer</option>
+              <option>Data Science</option>
+              <option>Web Developer</option>
+              <option>App Developer</option>
+              <option>Cybersecurity</option>
+              <option>Cloud & DevOps</option>
+              <option>Product Management</option>
+              <option>Business & Strategy</option>
+              <option>Marketing</option>
+              <option>Content & Copywriting</option>
+              <option>Finance</option>
+              <option>Human Resources</option>
+              <option>Research</option>
+              <option>Graphic Design</option>
+            </select>
+          </label>
+
+          <button class="search-btn" id="searchBtn">
+            Find internships <span>↗</span>
+          </button>
+        </div>
+
+        <div class="quick-tags">
+          <span>Popular:</span>
+          <button data-domain="AI / ML Engineer">AI / ML</button>
+          <button data-domain="UI/UX Designer">UI/UX</button>
+          <button data-domain="Software Engineer">Software</button>
+          <button data-domain="Data Science">Data Science</button>
+          <button data-location="Remote">Remote</button>
+        </div>
+      </section>
+
+      <section class="opportunities">
+        <div class="opportunities-head">
+          <div>
+            <div class="section-kicker">CURATED FOR YOU</div>
+            <h2>Explore opportunities</h2>
+          </div>
+          <button class="view-all" id="viewAll">View all ↗</button>
+        </div>
+
+        <div class="cards" id="cards">
+          <article class="intern-card" data-domain="AI / ML Engineer" data-location="Remote" data-country="India">
+            <div class="card-top">
+              <div class="company-logo">N</div>
+              <span class="save">♡</span>
+            </div>
+            <div class="card-tag">AI / ML</div>
+            <h3>AI Research Intern</h3>
+            <p class="company">Nova Labs</p>
+            <div class="meta"><span>India</span><span>•</span><span>Remote</span></div>
+            <div class="card-bottom"><span>₹20k–35k / month</span><span>2–3 months</span></div>
+          </article>
+
+          <article class="intern-card" data-domain="UI/UX Designer" data-location="Hybrid" data-country="Germany">
+            <div class="card-top">
+              <div class="company-logo warm">F</div>
+              <span class="save">♡</span>
+            </div>
+            <div class="card-tag">Design</div>
+            <h3>Product Design Intern</h3>
+            <p class="company">Fjord Studio</p>
+            <div class="meta"><span>Germany</span><span>•</span><span>Hybrid</span></div>
+            <div class="card-bottom"><span>Paid</span><span>3–6 months</span></div>
+          </article>
+
+          <article class="intern-card" data-domain="Software Engineer" data-location="On-site" data-country="United States">
+            <div class="card-top">
+              <div class="company-logo blue">A</div>
+              <span class="save">♡</span>
+            </div>
+            <div class="card-tag">Engineering</div>
+            <h3>Software Engineering Intern</h3>
+            <p class="company">Atlas Systems</p>
+            <div class="meta"><span>United States</span><span>•</span><span>On-site</span></div>
+            <div class="card-bottom"><span>$28–40 / hour</span><span>12 weeks</span></div>
+          </article>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          <div>◌</div>
+          <h3>No exact matches yet</h3>
+          <p>Try another country, location or domain.</p>
+        </div>
+      </section>
+
+      <section class="statement" id="about">
+        <div class="statement-mark">✦</div>
+        <h2>One hub.<br><em>More possibilities.</em></h2>
+        <p>PRAXIS brings students and early-career talent closer to meaningful work.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand">PRAXIS — The Intern Hub</div>
+      <div>Built for the next generation.</div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
