@@ -29,99 +29,152 @@
     </nav>
 
     <main>
-      <section class="hero" id="discover">
-        <div class="hero-photo"></div>
-        <div class="hero-vignette"></div>
-        <div class="grain"></div>
+     <section class="hero" id="discover">
 
-        <div class="hero-content">
-          <div class="eyebrow"><span></span> INTERNSHIPS, WITHOUT ANY HUSTLE</div>
-          <h1>PRAXIS<br><em>The Intern Hub</em></h1>
-          <p class="hero-copy">
-            Find internships that fit your ambition — across countries,
-            locations and domains, all in one place.
-          </p>
+  <div class="hero-photo"></div>
+  <div class="hero-vignette"></div>
+  <div class="grain"></div>
 
-          
-            <!-- PRAXIS AI CHATBOT -->
-<div class="ai-chatbot">
 
-  <div class="ai-chat-header">
-    <div class="ai-avatar">✦</div>
+  <div class="hero-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        <span></span> INTERNSHIPS, WITHOUT ANY HUSTLE
+      </div>
+
+      <h1>
+        PRAXIS<br>
+        <em>The Intern Hub</em>
+      </h1>
+
+      <p class="hero-copy">
+        Find internships that fit your ambition — across countries,
+        locations and domains, all in one place.
+      </p>
+
+
+      <!-- LOGIN CARD -->
+      <div class="login-card">
+
+        <div class="login-heading">
+          <strong>Start exploring</strong>
+          <span>Sign in to save internships</span>
+        </div>
+
+        <div class="login-actions">
+
+          <button class="social-btn google" data-login="Google">
+            <span class="social-icon">G</span>
+            Continue with Google
+          </button>
+
+          <button class="social-btn apple" data-login="Apple">
+            <span class="social-icon apple-symbol">●</span>
+            Continue with Apple
+          </button>
+
+          <button class="social-btn email" data-login="Email">
+            <span class="social-icon">✉</span>
+            Continue with Email
+          </button>
+
+        </div>
+
+      </div>
+      <!-- END LOGIN CARD -->
+
+    </div>
+    <!-- END LEFT SIDE -->
+
+
+    <!-- RIGHT SIDE — PRAXIS AI -->
+    <div class="ai-chatbot">
+
+      <div class="ai-chat-header">
+
+        <div class="ai-avatar">✦</div>
+
+        <div class="ai-title">
+          <strong>Praxis AI</strong>
+          <span>Your internship assistant</span>
+        </div>
+
+        <div class="ai-status"></div>
+
+      </div>
+
+
+      <div class="ai-chat-body" id="chatBody">
+
+        <div class="ai-message">
+
+          <div class="message-avatar">✦</div>
+
+          <div class="message-bubble">
+            Hey! I'm Praxis AI 👋
+            <br><br>
+            I can help you find internships based on your skills,
+            domain, location or career goals.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="ai-suggestions">
+
+        <button>Find AI internships</button>
+        <button>Remote internships</button>
+        <button>Help me choose a domain</button>
+
+      </div>
+
+
+      <div class="ai-input-area">
+
+        <input
+          type="text"
+          id="aiInput"
+          placeholder="Ask Praxis AI anything..."
+        />
+
+        <button id="aiSend">↗</button>
+
+      </div>
+
+
+      <div class="ai-footer">
+        <span>✦</span> Powered by Praxis AI
+      </div>
+
+    </div>
+    <!-- END PRAXIS AI -->
+
+  </div>
+  <!-- END HERO LAYOUT -->
+
+</section>
+<!-- END HERO -->
+
+
+<section class="finder" id="domains">
+
+  <div class="finder-top">
 
     <div>
-      <strong>Praxis AI</strong>
-      <span>Your internship assistant</span>
+      <div class="section-kicker">FIND YOUR FIT</div>
+      <h2>What are you looking for?</h2>
     </div>
 
-    <div class="ai-status"></div>
-  </div>
-
-  <div class="ai-chat-body" id="chatBody">
-
-    <div class="ai-message">
-      <div class="message-avatar">✦</div>
-
+    <div class="result-count" id="resultCount">
+      12,480+ opportunities
     </div>
 
   </div>
-
-  <div class="ai-suggestions">
-    <button>Find AI internships</button>
-    <button>Remote internships</button>
-    <button>Help me choose a domain</button>
-  </div>
-
-  <div class="ai-input-area">
-    <input
-      type="text"
-      id="aiInput"
-      placeholder="Ask Praxis AI anything..."
-    />
-
-    <button id="aiSend">↗</button>
-  </div>
-
-  <div class="ai-footer">
-    <span>✦</span> Powered by Praxis AI
-  </div>
-
-</div>
-          <div class="login-card">
-            <div class="login-heading">
-              <strong>Start exploring</strong>
-              <span>Sign in to save internships</span>
-            </div>
-
-             <div class="message-bubble">
-        Hey! I'm Praxis AI 👋<br><br>
-        I can help you find internships based on your skills,
-        domain, location or career goals.
-      </div>
-            
-            <div class="login-actions">
-              <button class="social-btn google" data-login="Google">
-                <span class="social-icon">G</span>
-                Continue with Google
-              </button>
-              <button class="social-btn apple" data-login="Apple">
-                <span class="social-icon apple-symbol">●</span>
-                Continue with Apple
-              </button>
-              <button class="social-btn email" data-login="Email">
-                <span class="social-icon">✉</span>
-                Continue with Email
-              </button>
-            </div>
-
-      <section class="finder" id="domains">
-        <div class="finder-top">
-          <div>
-            <div class="section-kicker">FIND YOUR FIT</div>
-            <h2>What are you looking for?</h2>
-          </div>
-          <div class="result-count" id="resultCount">12,480+ opportunities</div>
-        </div>
 
         <div class="filter-grid">
           <label class="filter-field">
