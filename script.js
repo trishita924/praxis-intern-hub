@@ -156,23 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-  /* =========================
-     LOGIN BUTTONS
-  ========================= */
-
-  document
-    .querySelectorAll("[data-login]")
-    .forEach(btn => {
-
-      btn.addEventListener("click", () => {
-
-        showToast(
-          `${btn.dataset.login} sign-in is ready to connect to your authentication provider.`
-        );
-
-      });
-
-    });
 
 
   const navLogin = document.getElementById("navLogin");
