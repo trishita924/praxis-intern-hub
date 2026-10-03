@@ -539,90 +539,146 @@ document.addEventListener("DOMContentLoaded", () => {
 // LOGIN MODAL
 // =========================
 
-const loginModal = document.getElementById("loginModal");
-const loginClose = document.getElementById("loginClose");
-const loginOverlay = document.getElementById("loginOverlay");
+document.addEventListener("DOMContentLoaded", () => {
 
-const socialLogin = document.getElementById("socialLogin");
-const emailLogin = document.getElementById("emailLogin");
-const emailSwitch = document.getElementById("emailSwitch");
+  const loginModal = document.getElementById("loginModal");
+  const loginClose = document.getElementById("loginClose");
+  const loginOverlay = document.getElementById("loginOverlay");
 
-const loginTitle = document.getElementById("loginTitle");
-const loginSubtitle = document.getElementById("loginSubtitle");
+  const socialLogin = document.getElementById("socialLogin");
+  const emailLogin = document.getElementById("emailLogin");
+  const emailSwitch = document.getElementById("emailSwitch");
 
-const googleLogin = document.getElementById("googleLogin");
-const appleLogin = document.getElementById("appleLogin");
-const emailSubmit = document.getElementById("emailSubmit");
+  const loginTitle = document.getElementById("loginTitle");
+  const loginSubtitle = document.getElementById("loginSubtitle");
 
-function openLoginModal(type){
-  if (!loginModal) return;
+  const googleLogin = document.getElementById("googleLogin");
+  const appleLogin = document.getElementById("appleLogin");
+  const emailSubmit = document.getElementById("emailSubmit");
 
-  loginModal.classList.add("active");
 
-  socialLogin.style.display = "flex";
-  emailLogin.classList.remove("active");
+  // OPEN MODAL
+  function openLoginModal(type) {
 
-  loginTitle.textContent = "Welcome to PRAXIS";
-  loginSubtitle.textContent =
-    "Sign in to continue exploring internships.";
-
-  if(type === "email"){
-    socialLogin.style.display = "none";
-    emailLogin.classList.add("active");
-
-    loginTitle.textContent = "Sign in with Email";
-    loginSubtitle.textContent =
-      "Enter your details to continue.";
-  }
-}
-
-function closeLoginModal(){
-  if(loginModal){
-    loginModal.classList.remove("active");
-  }
-}
-
-loginClose?.addEventListener("click", closeLoginModal);
-loginOverlay?.addEventListener("click", closeLoginModal);
-
-emailSwitch?.addEventListener("click", () => {
-  openLoginModal("email");
-});
-
-googleLogin?.addEventListener("click", () => {
-  showToast("Google sign-in selected");
-});
-
-appleLogin?.addEventListener("click", () => {
-  showToast("Apple sign-in selected");
-});
-
-emailSubmit?.addEventListener("click", () => {
-
-  const email = document.getElementById("loginEmail").value.trim();
-  const password = document.getElementById("loginPassword").value.trim();
-
-  if(!email || !password){
-    showToast("Please enter email and password");
-    return;
-  }
-
-  showToast("Login successful!");
-  closeLoginModal();
-});
-
-document.querySelectorAll("[data-login]").forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    const type = button.dataset.login;
-
-    if(type === "Email"){
-      openLoginModal("email");
-    }else{
-      openLoginModal(type);
+    if (!loginModal) {
+      console.log("Login modal not found");
+      return;
     }
 
+    loginModal.classList.add("active");
+
+    // Default
+    socialLogin.style.display = "flex";
+    emailLogin.classList.remove("active");
+
+    // GOOGLE
+    if (type === "Google") {
+
+      loginTitle.textContent = "Continue with Google";
+      loginSubtitle.textContent =
+        "Sign in securely using your Google account.";
+
+      googleLogin.style.display = "flex";
+      appleLogin.style.display = "none";
+      emailSwitch.style.display = "block";
+    }
+
+
+    // APPLE
+    else if (type === "Apple") {
+
+      loginTitle.textContent = "Continue with Apple";
+      loginSubtitle.textContent =
+        "Sign in securely using your Apple account.";
+
+      googleLogin.style.display = "none";
+      appleLogin.style.display = "flex";
+      emailSwitch.style.display = "block";
+    }
+
+
+    // EMAIL
+    else if (type === "Email") {
+
+      socialLogin.style.display = "none";
+      emailLogin.classList.add("active");
+
+      loginTitle.textContent = "Sign in with Email";
+      loginSubtitle.textContent =
+        "Enter your email and password to continue.";
+
+      emailSwitch.style.display = "none";
+    }
+  }
+
+
+  // CLOSE MODAL
+  function closeLoginModal() {
+    if (loginModal) {
+      loginModal.classList.remove("active");
+    }
+  }
+
+
+  // HERO LOGIN BUTTONS
+  document.querySelectorAll("[data-login]").forEach(button => {
+
+    button.addEventListener("click", function () {
+
+      const type = this.getAttribute("data-login");
+
+      console.log("Login clicked:", type);
+
+      openLoginModal(type);
+
+    });
+
   });
+
+
+  // CLOSE BUTTON
+  loginClose?.addEventListener("click", closeLoginModal);
+
+
+  // CLICK OUTSIDE MODAL
+  loginOverlay?.addEventListener("click", closeLoginModal);
+
+
+  // GOOGLE
+  googleLogin?.addEventListener("click", () => {
+
+    showToast("Google login selected");
+
+  });
+
+
+  // APPLE
+  appleLogin?.addEventListener("click", () => {
+
+    showToast("Apple login selected");
+
+  });
+
+
+  // EMAIL SUBMIT
+  emailSubmit?.addEventListener("click", () => {
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password =
+      document.getElementById("loginPassword").value.trim();
+
+    if (!email || !password) {
+
+      showToast("Please enter email and password");
+
+      return;
+    }
+
+    showToast("Login successful!");
+
+    closeLoginModal();
+
+  });
+
 
 });
