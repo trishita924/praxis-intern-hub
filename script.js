@@ -552,3 +552,94 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 });
+// =========================
+// LOGIN MODAL
+// =========================
+
+const loginModal = document.getElementById("loginModal");
+const loginClose = document.getElementById("loginClose");
+const loginOverlay = document.getElementById("loginOverlay");
+
+const socialLogin = document.getElementById("socialLogin");
+const emailLogin = document.getElementById("emailLogin");
+const emailSwitch = document.getElementById("emailSwitch");
+
+const loginTitle = document.getElementById("loginTitle");
+const loginSubtitle = document.getElementById("loginSubtitle");
+
+const googleLogin = document.getElementById("googleLogin");
+const appleLogin = document.getElementById("appleLogin");
+const emailSubmit = document.getElementById("emailSubmit");
+
+function openLoginModal(type){
+  if (!loginModal) return;
+
+  loginModal.classList.add("active");
+
+  socialLogin.style.display = "flex";
+  emailLogin.classList.remove("active");
+
+  loginTitle.textContent = "Welcome to PRAXIS";
+  loginSubtitle.textContent =
+    "Sign in to continue exploring internships.";
+
+  if(type === "email"){
+    socialLogin.style.display = "none";
+    emailLogin.classList.add("active");
+
+    loginTitle.textContent = "Sign in with Email";
+    loginSubtitle.textContent =
+      "Enter your details to continue.";
+  }
+}
+
+function closeLoginModal(){
+  if(loginModal){
+    loginModal.classList.remove("active");
+  }
+}
+
+loginClose?.addEventListener("click", closeLoginModal);
+loginOverlay?.addEventListener("click", closeLoginModal);
+
+emailSwitch?.addEventListener("click", () => {
+  openLoginModal("email");
+});
+
+googleLogin?.addEventListener("click", () => {
+  showToast("Google sign-in selected");
+});
+
+appleLogin?.addEventListener("click", () => {
+  showToast("Apple sign-in selected");
+});
+
+emailSubmit?.addEventListener("click", () => {
+
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  if(!email || !password){
+    showToast("Please enter email and password");
+    return;
+  }
+
+  showToast("Login successful!");
+  closeLoginModal();
+});
+
+document.querySelectorAll("[data-login]").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const type = button.dataset.login;
+
+    if(type === "Email"){
+      openLoginModal("email");
+    }else{
+      openLoginModal(type);
+    }
+
+  });
+
+});
