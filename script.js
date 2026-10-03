@@ -663,22 +663,46 @@ document.addEventListener("DOMContentLoaded", () => {
   // EMAIL SUBMIT
   emailSubmit?.addEventListener("click", () => {
 
-    const email = document.getElementById("loginEmail").value.trim();
-    const password =
-      document.getElementById("loginPassword").value.trim();
+  const emailInput = document.getElementById("loginEmail");
+  const passwordInput = document.getElementById("loginPassword");
 
-    if (!email || !password) {
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
-      showToast("Please enter email and password");
+  // Check email
+  if (!email) {
+    showToast("Please enter your email");
+    emailInput.focus();
+    return;
+  }
 
-      return;
-    }
+  // Check password
+  if (!password) {
+    showToast("Please enter your password");
+    passwordInput.focus();
+    return;
+  }
 
-    showToast("Login successful!");
+  // Basic email validation
+  if (!email.includes("@") || !email.includes(".")) {
+    showToast("Please enter a valid email address");
+    emailInput.focus();
+    return;
+  }
 
+  // Demo login
+  showToast("Login successful!");
+
+  // Clear fields
+  emailInput.value = "";
+  passwordInput.value = "";
+
+  // Close modal after a short delay
+  setTimeout(() => {
     closeLoginModal();
+  }, 800);
 
-  });
+});
 
 
 });
