@@ -91,3 +91,111 @@ document.getElementById("viewAll").addEventListener("click", () => {
   resultCount.textContent = "12,480+ opportunities";
   document.querySelector(".opportunities").scrollIntoView({behavior:"smooth"});
 });
+/* =========================
+   PRAXIS AI CHATBOT
+========================= */
+
+const aiInput = document.getElementById("aiInput");
+const aiSend = document.getElementById("aiSend");
+const chatBody = document.getElementById("chatBody");
+
+function addUserMessage(message) {
+  const messageDiv = document.createElement("div");
+  messageDiv.className = "ai-message user-message";
+
+  messageDiv.innerHTML = `
+    <div class="message-bubble user-bubble">
+      ${message}
+    </div>
+  `;
+
+  chatBody.appendChild(messageDiv);
+}
+
+function addAIMessage(message) {
+  const messageDiv = document.createElement("div");
+  messageDiv.className = "ai-message";
+
+  messageDiv.innerHTML = `
+    <div class="message-avatar">✦</div>
+    <div class="message-bubble">
+      ${message}
+    </div>
+  `;
+
+  chatBody.appendChild(messageDiv);
+}
+
+function getAIResponse(message) {
+
+  const text = message.toLowerCase();
+
+  if (text.includes("ai") || text.includes("machine learning")) {
+    return "For AI / ML, look for internships involving Python, Machine Learning, Deep Learning, Data Science or Generative AI. I can help you narrow down the right role.";
+  }
+
+  if (text.includes("remote") || text.includes("work from home")) {
+    return "Sure! You can explore remote internships using the Location filter below. Try selecting <b>Remote</b> or <b>Work from home</b>.";
+  }
+
+  if (text.includes("software") || text.includes("developer") || text.includes("coding")) {
+    return "For software development, you can explore internships in Web Development, App Development, Software Engineering or Cloud & DevOps.";
+  }
+
+  if (text.includes("design") || text.includes("ui") || text.includes("ux")) {
+    return "If you're interested in design, check out UI/UX Design and Graphic Design internships. A portfolio can be especially useful for these roles.";
+  }
+
+  if (text.includes("domain") || text.includes("career")) {
+    return "Think about what you enjoy: coding → Software/AI, analysing data → Data Science, creativity → UI/UX, security → Cybersecurity, or business → Product/Strategy.";
+  }
+
+  if (text.includes("hello") || text.includes("hi") || text.includes("hey")) {
+    return "Hey! 👋 I'm Praxis AI. Tell me your skills, preferred domain or location and I'll help you explore internships.";
+  }
+
+  return "I can help you explore internships based on your skills, domain and location. Try asking something like <b>“Find AI internships”</b> or <b>“I want a remote software internship”</b>.";
+}
+
+function sendAIMessage() {
+
+  const message = aiInput.value.trim();
+
+  if (!message) return;
+
+  addUserMessage(message);
+
+  aiInput.value = "";
+
+  setTimeout(() => {
+    const response = getAIResponse(message);
+    addAIMessage(response);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 500);
+
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+aiSend.addEventListener("click", sendAIMessage);
+
+aiInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    sendAIMessage();
+  }
+});
+
+
+/* Quick suggestion buttons */
+
+document.querySelectorAll(".ai-suggestions button").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    aiInput.value = button.textContent;
+
+    sendAIMessage();
+
+  });
+
+});
