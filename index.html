@@ -301,5 +301,70 @@
 
   <div class="toast" id="toast"></div>
   <script src="script.js"></script>
+  <!-- LOGIN MODAL -->
+<div class="login-modal" id="loginModal">
+  <div class="login-overlay" id="loginOverlay"></div>
+
+  <div class="login-dialog">
+
+    <button class="login-close" id="loginClose">×</button>
+
+    <div class="modal-logo">✦</div>
+
+    <h2 id="loginTitle">Welcome to PRAXIS</h2>
+    <p id="loginSubtitle">Sign in to continue exploring internships.</p>
+
+    <!-- GOOGLE / APPLE -->
+    <div id="socialLogin" class="social-login-content">
+      <button class="modal-login-btn google-modal" id="googleLogin">
+        <span>G</span>
+        Continue with Google
+      </button>
+
+      <button class="modal-login-btn apple-modal" id="appleLogin">
+        <span>●</span>
+        Continue with Apple
+      </button>
+    </div>
+
+    <!-- EMAIL -->
+    <div id="emailLogin" class="email-login-content">
+
+      <label>Email address</label>
+      <input
+        type="email"
+        id="loginEmail"
+        placeholder="you@example.com"
+      >
+
+      <label>Password</label>
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Enter your password"
+      >
+
+      <button class="modal-submit" id="emailSubmit">
+        Sign in
+      </button>
+
+      <p class="forgot-password">Forgot password?</p>
+
+    </div>
+
+    <div class="login-divider">
+      <span>OR</span>
+    </div>
+
+    <button class="email-switch" id="emailSwitch">
+      Continue with Email
+    </button>
+
+    <p class="login-terms">
+      By continuing, you agree to the PRAXIS Terms & Privacy Policy.
+    </p>
+
+  </div>
+</div>
 </body>
 </html>
