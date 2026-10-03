@@ -416,3 +416,13 @@ footer{
     gap:8px;
   }
 }
+.user-message{
+  justify-content:flex-end;
+  margin-top:10px;
+}
+
+.user-bubble{
+  background:var(--yellow);
+  color:#151610;
+  border-radius:14px 4px 14px 14px;
+}
